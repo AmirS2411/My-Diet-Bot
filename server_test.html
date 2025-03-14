@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Bot Test Server</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .success {
+            color: #27ae60;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diet Bot Test Server</h1>
+        <p>This is a simple test page being served by a Python HTTP server.</p>
+        <p class="success">✓ Server is running successfully!</p>
+        <p>You can now test your local server functionality.</p>
+        <p>Current time: <span id="time"></span></p>
+    </div>
+
+    <script>
+        // Update the time every second
+        function updateTime() {
+            const timeElement = document.getElementById('time');
+            timeElement.textContent = new Date().toLocaleTimeString();
+        }
+        
+        // Update time immediately and then every second
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
